@@ -8,8 +8,11 @@ type Props = {
 }
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  const postRequest = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
+  const post: Post = await postRequest.json();
+  
   return {
-    title: `Post ${params.postId}`
+    title: post.title
   }
 }
 
