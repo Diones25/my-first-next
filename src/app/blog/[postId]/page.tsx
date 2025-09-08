@@ -7,8 +7,10 @@ type Props = {
   }
 }
 
-export const metadata: Metadata = {
-  title: "Blog"
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  return {
+    title: `Post ${params.postId}`
+  }
 }
 
 const Page = async ({ params }: Props) => {
