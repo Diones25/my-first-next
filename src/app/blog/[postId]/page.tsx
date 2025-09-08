@@ -11,6 +11,8 @@ const Page = async ({ params }: Props) => {
   const postRequest = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
   const post: Post = await postRequest.json();
 
+  if (!post.id) return <div>Post não encontrado</div>
+
   return (
     <div className="text-center">
       <div>ID: {post.id}</div>
