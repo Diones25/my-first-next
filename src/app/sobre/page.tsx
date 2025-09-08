@@ -2,7 +2,7 @@
  const Page = () => {
   return (
     <div>
-      Página Inicial
+      Página Sobre
     </div>
   )
  }
